@@ -4,7 +4,7 @@ import contactBackground from "../assets/home/contactBackground.webp";
 import maskShape from "../assets/home/Maskgroup.png";
 import vectorShape from "../assets/home/Vector_form.png";
 import contactDeviderImg from "../assets/bgVector/contactDevider.png";
-import { sendOtp, verifyOtp } from "../helpers/otp";
+import { sendOtp, verifyOtp, saveLead } from "../helpers/otp";
 
 export default function ContactUs() {
   const [step, setStep] = useState("form"); // 👉 form | otp | success
@@ -30,15 +30,19 @@ export default function ContactUs() {
     const otpRes = await sendOtp(data.phone);
     console.log("OTP Send Response:", otpRes);
   };
-
+  
   const handleOtpVerify = async (e) => {
     e.preventDefault(); // ✅ stops page refresh
-
+    
     const result = await verifyOtp(formData.phone, otp);
-
+    
     if (result?.description?.desc === "Code Matched successfully.") {
+      formData.pageUrl = window.location.href; 
+      console.log(formData);
+      
       setOtpError("");
       setStep("success");
+      await saveLead(formData);
     } else {
       setOtpError("Invalid OTP. Try again.");
     }
@@ -201,11 +205,7 @@ export default function ContactUs() {
                 } focus:border-[#6b4b3e] outline-none py-3 bg-transparent resize-none placeholder:text-gray-700`}
                 {...register("message")}
               ></textarea>
-              {errors.message && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.message.message}
-                </p>
-              )}
+          
             </div>
 
             <div className="flex justify-start mt-4">

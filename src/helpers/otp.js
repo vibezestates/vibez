@@ -19,3 +19,18 @@ export const verifyOtp = async (phone, otp) => {
 
   return await res.json();
 };
+
+export const saveLead = async (data) => {
+  try {
+    const response = await fetch("http://93.127.195.157/api/save-lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    return await response.json();
+  } catch (err) {
+    console.error("Error sending lead:", err);
+    return { success: false, message: err.message };
+  }
+};
