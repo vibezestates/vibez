@@ -1,7 +1,7 @@
 // src/helpers/otp.js
 
 export const sendOtp = async (phone) => {
-  const res = await fetch(import.meta.env.VITE_BACKEND_URL + "/send-otp", {
+  const res = await fetch("http://93.127.195.157/api/send-otp", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ phone }),
@@ -11,7 +11,7 @@ export const sendOtp = async (phone) => {
 };
 
 export const verifyOtp = async (phone, otp) => {
-  const res = await fetch(import.meta.env.VITE_BACKEND_URL + "/verify-otp", {
+  const res = await fetch("http://93.127.195.157/api/verify-otp", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ phone, otp }),
