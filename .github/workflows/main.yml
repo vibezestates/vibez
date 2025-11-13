@@ -1,48 +1,22 @@
-name: 🚀 Deploy to VPS
+name: Deploy to VPS
 
 on:
   push:
-    branches:
-      - main   # Deploy only when code is pushed to main
+    branches: [ "main" ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: ⚙️ Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: 📦 Install dependencies
-        run: npm ci
-
-      - name: 🏗️ Build project
-        run: npm run build
-
-      - name: 🧾 Check build output
-        run: ls -l dist
-
-      - name: 🚢 Deploy build to VPS
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          source: "dist/*"
-          target: "/var/www/web/app"
-          overwrite: true   # safer than rm:true, overwrites changed files
-          strip_components: 0
-
-      - name: 🔄 Reload Nginx
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            sudo systemctl reload nginx
+    - name: Deploy to VPS
+      uses: appleboy/ssh-action@master
+      with:
+        host: 93.127.195.157
+        username: root
+        key: ${{ secrets.VPS_KEY }}
+        script: |
+          /root/deploy.sh
