@@ -3,7 +3,7 @@ name: 🚀 Deploy to VPS
 on:
   push:
     branches:
-      - main   # Change if your main branch is named differently
+      - main   # Deploy only when code is pushed to main
 
 jobs:
   deploy:
@@ -35,9 +35,8 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "dist/*"
           target: "/var/www/web/app"
-          rm: true
-
-
+          overwrite: true   # safer than rm:true, overwrites changed files
+          strip_components: 0
 
       - name: 🔄 Reload Nginx
         uses: appleboy/ssh-action@v0.1.7
