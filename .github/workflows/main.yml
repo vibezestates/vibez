@@ -1,22 +1,30 @@
-name: Deploy to VPS
+name: Deploy Vibez
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Deploy to VPS
-      uses: appleboy/ssh-action@master
-      with:
-        host: 93.127.195.157
-        username: root
-        key: ${{ secrets.VPS_KEY }}
-        script: |
-          /root/deploy.sh
+    - name: Setup SSH Key
+      run: |
+        mkdir -p ~/.ssh
+        echo "$VPS_KEY" > ~/.ssh/vps_key
+        chmod 600 ~/.ssh/vps_key
+
+    - name: Add VPS to known_hosts
+      run: |
+        ssh-keyscan -H 93.127.195.157 >> ~/.ssh/known_hosts
+
+    - name: Run Deploy Script on VPS
+      run: |
+        ssh -i ~/.ssh/vps_key -o StrictHostKeyChecking=no root@93.127.195.157 "bash /root/deploy-vibez.sh"
+      env:
+        VPS_KEY: ${{ secrets.VPS_KEY }}
