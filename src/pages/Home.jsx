@@ -25,7 +25,7 @@ const Home = () => {
         bgColor2={"#104D39"}
         img1={CherryImg}
         img2={Vector1Img}
-        heading={"Managed farmlands!"}
+        heading={"Managed farmlands"}
         btnLine={"Discover farmlands"}
         description={"Call a piece of paradise, yours. We offer diverse investment options like coffee plantations and teakwood groves. Our experts manage every aspect of your farm, from planting to sales, focusing on sustainable practices that protect your investment and the environment."}
         color={"#FFFFFF"}
