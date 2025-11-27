@@ -1,4 +1,4 @@
-name: Deploy Vibez
+name: Deploy Vibez to VPS
 
 on:
   push:
@@ -8,23 +8,26 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup SSH Key
-      run: |
-        mkdir -p ~/.ssh
-        echo "$VPS_KEY" > ~/.ssh/vps_key
-        chmod 600 ~/.ssh/vps_key
+      - name: Copy files to server and deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: root
+          key: ${{ secrets.VPS_VIBEZ_KEY }}
+          script: |
+            cd /root/vibez
+            git pull origin main
 
-    - name: Add VPS to known_hosts
-      run: |
-        ssh-keyscan -H 93.127.195.157 >> ~/.ssh/known_hosts
+            npm install
 
-    - name: Run Deploy Script on VPS
-      run: |
-        ssh -i ~/.ssh/vps_key -o StrictHostKeyChecking=no root@93.127.195.157 "bash /root/deploy-vibez.sh"
-      env:
-        VPS_KEY: ${{ secrets.VPS_KEY }}
+            npm run build
+
+            rm -rf /var/www/vibez/*
+            cp -r dist/* /var/www/vibez/
+
+            chown -R www-data:www-data /var/www/vibez
+            systemctl restart nginx
