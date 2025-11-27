@@ -17,7 +17,7 @@ jobs:
         with:
           host: ${{ secrets.VPS_HOST }}
           username: root
-          key: ${{ secrets.VPS_VIBEZ_KEY }}
+          key: ${{ secrets.VIBEZ_DEPLOY_KEY }}
           script: |
             cd /root/vibez
             git pull origin main
