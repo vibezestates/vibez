@@ -13,14 +13,14 @@ import {
 import floorPlan1 from "../../assets/home/floorPlan1.png";
 
 
-const plans = [
+const plans1 = [
   { id: 1, label: "1 BHK, 6500 sqft", image: floorPlan1 },
   { id: 2, label: "2 BHK, 6500 sqft", image: floorPlan1 },
   { id: 3, label: "1 BHK, 10000 sqft", image: floorPlan1 },
   { id: 4, label: "2 BHK, 10000 sqft", image: floorPlan1 },
 ];
 
-const FloorPlans = () => {
+const FloorPlans = ({plans = plans1}) => {
   const [selected, setSelected] = useState(plans[0]);
 
   return (

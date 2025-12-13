@@ -2,6 +2,8 @@ import React from "react";
 import Banner from "../components/FullSlider/Banner";
 import AmenitiesSection from "../components/Amenities/AmenitiesSection";
 import indoorGamesIcon from "../assets/amenities/indoorGamesIcon.png";
+import communityIcon from "../assets/amenities/communityIcon.png";
+import irrigationIcon from "../assets/amenities/irrigationIcon.png";
 import restaurantIcon from "../assets/amenities/restaurantIcon.png";
 import carParkingIcon from "../assets/amenities/carParkingIcon.png";
 import wifiIcon from "../assets/amenities/wifiIcon.png";
@@ -26,25 +28,25 @@ import ProjectSlider from '../components/ProjectSilder/ProjectSlider';
 import CardOne from '../components/Card/CardOne';
 import projectDetailContact from '../assets/home/projectDetailContact.jpg';
 import LuxuryImg from '../assets/cards/luxury.webp';
-import bannerImg from '../assets/farmland/kaira.webp';
-import { title } from "framer-motion/client";
+import bannerImg from '../assets/projects/‎bilvadhara1.webp';
+import floorPlan1 from "../assets/home/floorPlan1.png";
 
 const amenitiesSectInfo = {
   heading: "Amenities",
   subHeading: "",
   amenitiesData: [
-    { icon: indoorGamesIcon, title: "Indoor Games" },
-    { icon: restaurantIcon, title: "Restaurant" },
+    { icon: communityIcon, title: "Meditation Hall" },
+    { icon: restaurantIcon, title: " Club House" },
     { icon: carParkingIcon, title: "Car parking" },
-    { icon: wifiIcon, title: "Wi-fi" },
+    { icon: irrigationIcon, title: "Kalyani (Sacred Pond)" },
     { icon: playAreaIcon, title: "Children’s Play Area" },
-    { icon: swimmingPoolIcon, title: "Swimming Pool" },
+    { icon: swimmingPoolIcon, title: " Stone Mantapa" },
     { icon: securityIconProjectDet, title: "24/7 security" },
-    { icon: cctvIcon, title: "CCTV" },
-    { icon: plantationTrailIcon, title: "Plantation Trail" },
-    { icon: gazeboIcon, title: "Gazebo" },
+    { icon: restaurantIcon, title: " Banquet Hall" },
+    { icon: plantationTrailIcon, title: " Walking Trails" },
+    { icon: gazeboIcon, title: "Yoga Zones" },
     { icon: starGazingIcon, title: "Star Grazing" },
-    { icon: badmintonIcon, title: "Badminton" },
+    { icon: communityIcon, title: " Community Spaces" },
   ],
 };
 
@@ -70,6 +72,12 @@ export default function Bilvadhara() {
       content: "Sakleshwara temple"
     }
   ];
+  const floorPlan = [
+    { id: 1, label: "1 BHK", image: floorPlan1 },
+    { id: 2, label: "2 BHK", image: floorPlan1 },
+    { id: 3, label: "3 BHK,", image: floorPlan1 },
+    
+  ];
 
   return (
     <>
@@ -80,13 +88,13 @@ export default function Bilvadhara() {
         button="Status: Now Selling"
         bgEffect={true}
       />
-      {/* <Tombsection bgTheme="vector-leaf-left-right-v1" bgColor={"#DDD7CB4D"} color={'black'} logo={Flower} imgSrc={KairaImg} heading={"Bilva Dhara – Your Retreat into Nature, Serenity & Soulful Living"} content={"Experience a lifestyle where peace flows as naturally as the river that surrounds Dharmasthala. Bilva Dhara brings you villas inspired by Karnataka’s timeless vernacular architecture—crafted for those who seek soulful living, spiritual connection, and weekend serenity."} fontStyle={"font-poppins"} kaira={true}  />
+      <Tombsection bgTheme="vector-leaf-left-right-v1" bgColor={"#DDD7CB4D"} color={'black'} logo={Flower} imgSrc={KairaImg} heading={"Bilva Dhara – Your Retreat into Nature, Serenity & Soulful Living"} content={"Experience a lifestyle where peace flows as naturally as the river that surrounds Dharmasthala. Bilva Dhara brings you villas inspired by Karnataka’s timeless vernacular architecture—crafted for those who seek soulful living, spiritual connection, and weekend serenity."} fontStyle={"font-poppins"} bilvadhara={true}  />
       <AmenitiesSection
         heading={amenitiesSectInfo.heading}
         subHeading={amenitiesSectInfo.subHeading}
         amenitiesData={amenitiesSectInfo.amenitiesData}
       />
-      <FloorPlans />
+      <FloorPlans plans={floorPlan}/>
       <ProjectSlider heading={"NEARBY ATTRACTIONS"} cardData={cardData} color={"black"} bgColor={"#F2EFEC"}/>
       <InvestSection />
        <CardOne rev={false}
@@ -99,7 +107,7 @@ export default function Bilvadhara() {
 `}
         btnLine={"Learn more"}
         color={"#F2EFEC"}
-      /> */}
+      />
     </>
   );
 }

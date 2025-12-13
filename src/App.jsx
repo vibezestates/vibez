@@ -5,6 +5,7 @@ import MainLayout from './components/Layout/MainLayout';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ScrolltoTop from './ScrolltoTop';
+import StickyButtons from './components/StickyButtons';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           />
         ))}
       </Routes>
+      <StickyButtons/>
     </Router>
   );
 }

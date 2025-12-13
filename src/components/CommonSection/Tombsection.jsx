@@ -69,6 +69,22 @@ export default function Tombsection(props) {
                         <p>3</p>
                     </div>
                 </div>}
+                {props.bilvadhara && <div className='areaSection'>
+                    <div>
+                        <p>Plot Size</p>
+                        <p>2,500 sqft</p>
+                    </div>
+                    <HorizontalLine />
+                    <div>
+                        <p>Villas Starting From:</p>
+                        <p>65 lakhs*</p>
+                    </div>
+                    <HorizontalLine />
+                    <div>
+                        <p>Configurations</p>
+                        <p>1 BHK • 2 BHK • 3 BHK</p>
+                    </div>
+                </div>}
                 <div className={`tombRectangle ${props.kaira ? 'kairaMode' : ''}`}
                 >
                     <motion.img

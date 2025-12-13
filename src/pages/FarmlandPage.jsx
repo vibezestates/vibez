@@ -19,6 +19,8 @@ import farm1 from '../assets/home/farm1.png';
 import farm2 from '../assets/home/farm2.png';
 import bannerImg from "../assets/home/banner4.webp";
 import subBanner from '../assets/home/banner4_farmland.webp'
+import ProjectsGallery from '../components/ProjectCard/ProjectCard';
+
 const amenitiesSectInfo = {
   heading: "Amenities That Grow With You",
   subHeading: "From crop selection, and planting to harvesting and marketing, we provide a comprehensive set of services.",
@@ -57,8 +59,10 @@ export default function FarmlandPage() {
         <TestimonialSlider cardData={farmLandTestinmonials}  sliderTitle="Hear from our satisfied clients"/>
       </TestimonialSliderWraper>
       <ZigZagSliderWraper>
-        <ZigZagSlider cardData={ProjectSliderData} title="Explore farmland projects" bgImage={zigZagBgimage} />
+        {/* <ZigZagSlider cardData={ProjectSliderData} title="Explore farmland projects" bgImage={zigZagBgimage} /> */}
+      <ProjectsGallery />
       </ZigZagSliderWraper>
+      {/* <ProjectCard /> */}
       <CardOne
         rev={true}
         bgColor="#E7E2DA"

@@ -140,10 +140,11 @@ export const RightPanel = styled.div`
 `;
 
 export const FloorImage = styled.img`
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: contain;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 800px;
+height: auto;
+border-radius: 8px;
+object-fit: contain;
+box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+filter: blur(8px);
 `;
