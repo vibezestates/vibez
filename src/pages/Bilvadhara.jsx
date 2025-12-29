@@ -21,15 +21,20 @@ import Tombsection from '/src/components/CommonSection/Tombsection';
 import Flower from '/src/assets/section2/flower.png';
 import KairaImg from '/src/assets/home/kaira.png';
 import CardSlider from '../components/CardSlider/CardSlider';
-import SliderImage1 from '../assets/nearby/nearby1.webp'
-import SliderImage2 from '../assets/nearby/nearby2.webp'
-import SliderImage3 from '../assets/nearby/nearby3.webp'
+import SliderImage1 from '../assets/bilva/dm.webp'
+import SliderImage2 from '../assets/bilva/dm.webp'
+import SliderImage3 from '../assets/bilva/kukke.webp'
+import SliderImage4 from '../assets/bilva/km.webp'
+import SliderImage5 from '../assets/bilva/narasimha.webp'
+import SliderImage6 from '../assets/bilva/mang.webp'
 import ProjectSlider from '../components/ProjectSilder/ProjectSlider';
 import CardOne from '../components/Card/CardOne';
 import projectDetailContact from '../assets/home/projectDetailContact.jpg';
 import LuxuryImg from '../assets/cards/luxury.webp';
-import bannerImg from '../assets/projects/‎bilvadhara1.webp';
+import bannerImg from '../assets/projects/‎bilvadharaNew.webp';
 import floorPlan1 from "../assets/home/floorPlan1.png";
+
+
 
 const amenitiesSectInfo = {
   heading: "Amenities",
@@ -56,20 +61,38 @@ export default function Bilvadhara() {
     {
       id: 1,
       image: SliderImage1,
-      title:"36 km",
-      content: "Magajahalli Water Falls"
-    },
-    {
-      id: 2,
-      image: SliderImage2,
       title:"",
-      content: "Bisile ghat view points"
+      content: "Sri Manjunatha Swamy Temple"
     },
     {
       id: 3,
       image: SliderImage3,
       title:"",
-      content: "Sakleshwara temple"
+      content: "Kukke Subramanya Temple"
+    },
+    {
+      id: 4,
+      image: SliderImage4,
+      title:"",
+      content: "Kadri Manjunatha Temple"
+    },
+    {
+      id: 5,
+      image: SliderImage5,
+      title:"",
+      content: "Narasimhaghada Jamalabad Fort"
+    },
+    {
+      id: 2,
+      image: SliderImage2,
+      title:"",
+      content: "Dharmasthala Manjusha Antique Museum"
+    },
+    {
+      id: 6,
+      image: SliderImage6,
+      title:"",
+      content: "Mangaluru"
     }
   ];
   const floorPlan = [
@@ -95,7 +118,7 @@ export default function Bilvadhara() {
         amenitiesData={amenitiesSectInfo.amenitiesData}
       />
       <FloorPlans plans={floorPlan}/>
-      <ProjectSlider heading={"NEARBY ATTRACTIONS"} cardData={cardData} color={"black"} bgColor={"#F2EFEC"}/>
+      <ProjectSlider className="testing" heading={"NEARBY ATTRACTIONS"} cardData={cardData} color={"black"} bgColor={"#F2EFEC"}/>
       <InvestSection />
        <CardOne rev={false}
         bgColor={"#DDD7CB"}

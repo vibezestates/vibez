@@ -26,7 +26,7 @@ import ProjectSlider from '../components/ProjectSilder/ProjectSlider';
 import CardOne from '../components/Card/CardOne';
 import projectDetailContact from '../assets/home/projectDetailContact.jpg';
 import LuxuryImg from '../assets/cards/luxury.webp';
-import bannerImg from '../assets/farmland/kaira.webp';
+import bannerImg from '../assets/farmland/niharika.webp';
 import { title } from "framer-motion/client";
 
 const amenitiesSectInfo = {
