@@ -6,11 +6,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ScrolltoTop from './ScrolltoTop';
 import StickyButtons from './components/StickyButtons';
+import NewYearPopup from './components/NewYearPopup';
 
 export default function App() {
   return (
     <Router>
       <ScrolltoTop/>
+      <NewYearPopup/>
       <Routes>
         {routesConfig.map(({ path, element, meta }) => (
           <Route
