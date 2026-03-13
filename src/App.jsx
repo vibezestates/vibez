@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ScrolltoTop from './ScrolltoTop';
 import StickyButtons from './components/StickyButtons';
 import NewYearPopup from './components/NewYearPopup';
+import RightStickyBanner from './components/RightStickyBanner/RightStickyBanner';
 
 export default function App() {
   return (
@@ -21,7 +22,10 @@ export default function App() {
             element={<MainLayout meta={meta}>{element}</MainLayout>}
           />
         ))}
+
       </Routes>
+      <RightStickyBanner position="right"/>
+      <RightStickyBanner position="left"/>
       <StickyButtons/>
     </Router>
   );
