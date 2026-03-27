@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Router>
       <ScrolltoTop/>
-      <NewYearPopup/>
+      {/* <NewYearPopup/> */}
       <Routes>
         {routesConfig.map(({ path, element, meta }) => (
           <Route
@@ -24,8 +24,8 @@ export default function App() {
         ))}
 
       </Routes>
-      <RightStickyBanner position="right"/>
-      <RightStickyBanner position="left"/>
+      {/* <RightStickyBanner position="right"/>
+      <RightStickyBanner position="left"/> */}
       <StickyButtons/>
     </Router>
   );

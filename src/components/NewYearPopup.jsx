@@ -13,7 +13,7 @@ function isValidNewYearDate() {
 
   return (
     (month === 11 && date === 31) ||
-    (year === 2026 && month === 0 && date === 1)
+    (year === 2027 && month === 0 && date === 1)
   );
 }
 
@@ -96,7 +96,7 @@ export default function NewYearPopup() {
             >
               <Title className="mb-2 text-2xl font-bold text-white
               ">
-                🎉 Happy New Year 2026 🎉
+                🎉 Happy New Year {new Date().getFullYear()} 🎉
               </Title>
 
               <p className="text-sm text-white">
