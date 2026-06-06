@@ -16,6 +16,7 @@ export const BannerDiv = styled.div`
   min-height: 804px;
   align-items: center;
   justify-content: center;
+  cursor: ${(props) => (props.$link ? 'pointer' : 'default')};
 `;
 
 export const BannerContentWrapper = styled.div`

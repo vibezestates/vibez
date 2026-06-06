@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import Banner from "./Banner";
 import { SliderNextButton, SliderPrevButton } from './Banner.style'
 import BannerArrows from "../../assets/sliderglobal/right-arrow.png";
-import BannerImg from "../../assets/home/banner1.webp";
+import BannerImg from "../../assets/home/latest-banner.webp";
 import './banner.css'
 export default function FullSlider() {
 
@@ -42,10 +42,11 @@ export default function FullSlider() {
       <div index="1">
         <Banner
           image={BannerImg}
-          title="Join the Vibez tribe"
-          content="Your dream lifestyle starts here, with the coolest crew in town. Explore exclusive properties and investment opportunities."
+          title=""
+          content=""
           button="Learn more!"
-          buttonClick={() => { window.location = '/contact'; console.log("Button clicked"); }}
+          buttonClick={() => { window.open('https://vibezkaira.com/vibez-estates-signs-sarovar-hotels-to-manage/', '_blank', 'noopener,noreferrer'); }}
+          link="https://vibezkaira.com/vibez-estates-signs-sarovar-hotels-to-manage/"
         />
       </div>
       {/* <div index="2">
@@ -57,6 +58,21 @@ export default function FullSlider() {
         />
       </div> */}
     </Slider>
+
+    <div style={{
+      backgroundColor: '#B98038',
+      color: 'white',
+      padding: '60px 20px',
+      textAlign: 'center',
+      fontFamily: 'Maharlika',
+      fontSize: '22px',
+      fontWeight: '400',
+      lineHeight: '1.4',
+      letterSpacing: '2px'
+    }}>
+      SAROVAR PREMIÈRE ENTERS THE WESTERN GHATS: PARTNERS WITH VIBEZ ESTATES TO INTRODUCE<br/>
+      VIBEZ SAROVAR PREMIÈRE BRANDED RESIDENCES IN SAKLESHPUR
+    </div>
 
     </div>
   );
